@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.js"></script>
+<script>
+    let hasShow = true;
+    new Vue({
+        template: `<div class="content">
+		<div class="search-box">
+			<input type="text" v-model="keyword">
+			<button class="button" v-if="keyword" @click="submit">搜索</button>
+			<button class="button" v-else @click="clear">取消</button>
+		</div>
+		<div class="list" v-for="(item, index) in lists" :key="index">
+			<button class="name">{{ item.name }}</button>
+			<button class="age">{{ item.age }}</button>
+		</div>
+		<div class="footer" v-if="isShowFooter">{{ footerText }}</div>
+	</div>`,
+
+		data: () => ({
+			keyword: '',
+			lists: [
+				{
+					name: '小明',
+					age: 20
+				},
+				{
+					name: '小邓',
+					age: 21
+				},
+				{
+					name: '小黄',
+					age: 22
+				}
+			],
+			footerText: '欢聚堂技术支持'
+		}),
+
+		computed: {
+			isShowFooter() {
+				console.log('isShowFooter function');
+				// if (!hasShow) return false;
+
+				return this.keyword === '' || hasShow;
+			}
+		},
+
+		methods: {
+			submit() {
+				hasShow = false;
+			},
+			clear() {
+				hasShow = true;
+				this.keyword = '';
+			}
+		}
+	}).$mount('#app')
+</script>
+</html>

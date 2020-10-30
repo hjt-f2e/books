@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最简单的双向绑定原理</title>
+</head>
+<body>
+    <div>
+        <span>输入内容</span>
+        <input value="" id="input">
+    </div>
+    <div>
+        <span>双向绑定数据</span>
+        <p></p>
+    </div>
+    <button id="submit">提交</button>
+    <button id="reset">重置</button>
+</body>
+<script>
+    (function() {
+        const obj = {};
+
+        Object.defineProperty(obj, 'val', {
+            enumerable: true,
+            configurable: true,
+            get: function() {
+                return document.querySelector('#input').value;
+            },
+            set: function(newVal) {
+                document.querySelector('p').innerText = newVal;
+                document.querySelector('#input').value = newVal;
+                obj._val = newVal;
+            }
+        });
+
+        const inputElem = document.querySelector('#input');
+        inputElem.addEventListener('keyup', function(e) {
+            obj.val = e.target.value;
+        });
+
+        document.querySelector('#submit').addEventListener('click', function() {
+            let val = obj.val;
+            alert('提交的内容是：' + val);
+            obj.val = '';
+        });
+
+        document.querySelector('#reset').addEventListener('click', function() {
+            obj.val = '';
+        });
+    }());
+</script>
+</html>
