@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)file:///D:/web/micro%20frontends/README.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>README</title>
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="./README_files/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="%E5%BE%AE%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84%E5%88%86%E4%BA%AB">微前端架构分享</h1>
+
+<ul>
+<li><a href="file:///D:/web/micro%20frontends/README.html#%E5%BE%AE%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84%E5%88%86%E4%BA%AB">微前端架构分享</a>
+<ul>
+<li><a href="file:///D:/web/micro%20frontends/README.html#%E4%BB%80%E4%B9%88%E6%98%AF%E5%BE%AE%E5%89%8D%E7%AB%AF">什么是微前端</a>
+<ul>
+<li><a href="file:///D:/web/micro%20frontends/README.html#%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84">微服务架构</a></li>
+<li><a href="file:///D:/web/micro%20frontends/README.html#%E5%BE%AE%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84">微前端架构</a></li>
+</ul>
+</li>
+<li><a href="file:///D:/web/micro%20frontends/README.html#%E5%BE%AE%E5%89%8D%E7%AB%AF%E8%A6%81%E8%A7%A3%E5%86%B3%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98">微前端要解决什么问题</a>
+<ul>
+<li><a href="file:///D:/web/micro%20frontends/README.html#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E5%BE%AE%E5%89%8D%E7%AB%AF">为什么需要微前端</a></li>
+</ul>
+</li>
+<li><a href="file:///D:/web/micro%20frontends/README.html#%E5%BE%AE%E5%89%8D%E7%AB%AF%E7%9A%84%E4%BC%98%E7%82%B9">微前端的优点</a></li>
+<li><a href="file:///D:/web/micro%20frontends/README.html#%E5%BE%AE%E5%89%8D%E7%AB%AF%E7%9A%84%E7%BC%BA%E7%82%B9">微前端的缺点</a></li>
+<li><a href="file:///D:/web/micro%20frontends/README.html#%E7%9B%AE%E5%89%8D%E5%BE%AE%E5%89%8D%E7%AB%AF%E6%9C%89%E5%93%AA%E4%BA%9B%E6%A1%86%E6%9E%B6">目前微前端有哪些框架</a></li>
+<li><a href="file:///D:/web/micro%20frontends/README.html#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%94%A8-iframe">为什么不用 iframe</a></li>
+<li><a href="file:///D:/web/micro%20frontends/README.html#%E4%BD%BF%E7%94%A8qiankun">使用Qiankun</a>
+<ul>
+<li><a href="file:///D:/web/micro%20frontends/README.html#%E5%85%B3%E9%94%AE%E4%BB%A3%E7%A0%81">关键代码</a>
+<ul>
+<li><a href="file:///D:/web/micro%20frontends/README.html#%E4%B8%BB%E5%BA%94%E7%94%A8">主应用:</a></li>
+<li><a href="file:///D:/web/micro%20frontends/README.html#%E5%AD%90%E5%BA%94%E7%94%A8">子应用:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="file:///D:/web/micro%20frontends/README.html#%E5%86%99%E7%82%B9demo%E5%B0%9D%E9%B2%9C">写点demo尝鲜</a>
+<ul>
+<li><a href="file:///D:/web/micro%20frontends/README.html#1%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E4%B8%BB%E5%BA%94%E7%94%A8%E5%AD%90%E5%BA%94%E7%94%A8demo01">1.最简单的主应用+子应用(demo01)</a></li>
+<li><a href="file:///D:/web/micro%20frontends/README.html#2%E6%8E%A5%E5%85%A5%E4%B8%80%E4%B8%AA%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF%E6%A0%88%E7%9A%84%E5%AD%90%E5%BA%94%E7%94%A8demo02">2.接入一个其他技术栈的子应用(demo02)</a></li>
+<li><a href="file:///D:/web/micro%20frontends/README.html#3%E8%B7%B3%E8%BD%AC%E5%BA%94%E7%94%A8demo02">3.跳转应用(demo02)</a></li>
+<li><a href="file:///D:/web/micro%20frontends/README.html#4%E6%A0%B7%E5%BC%8F%E9%9A%94%E7%A6%BBdemo03">4.样式隔离(demo03)</a></li>
+<li><a href="file:///D:/web/micro%20frontends/README.html#5js%E7%9A%84%E9%9A%94%E7%A6%BBdemo04">5.js的隔离(demo04)</a></li>
+<li><a href="file:///D:/web/micro%20frontends/README.html#6%E5%BA%94%E7%94%A8%E9%97%B4%E9%80%9A%E4%BF%A1demo05">6.应用间通信(demo05)</a></li>
+<li><a href="file:///D:/web/micro%20frontends/README.html#7%E5%BC%95%E5%85%A5ui%E5%BA%93demo06">7.引入UI库(demo06)</a>
+<ul>
+<li><a href="file:///D:/web/micro%20frontends/README.html#%E5%9D%911-%E5%AD%97%E4%BD%93%E6%96%87%E4%BB%B6%E5%A4%A7%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD">坑1: 字体文件，大图片无法加载</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="file:///D:/web/micro%20frontends/README.html#%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90">源码分析</a>
+<ul>
+<li><a href="file:///D:/web/micro%20frontends/README.html#js%E6%B2%99%E7%AE%B1%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0demo07">js沙箱如何实现(demo07)</a></li>
+</ul>
+</li>
+<li><a href="file:///D:/web/micro%20frontends/README.html#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE">参考文献</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="mume-header" id="%E4%BB%80%E4%B9%88%E6%98%AF%E5%BE%AE%E5%89%8D%E7%AB%AF">什么是微前端</h2>
+
+<h3 class="mume-header" id="%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84">微服务架构</h3>
+
+<blockquote>
+<p>微服务是面向服务架构（SOA）的一种变体，把应用程序设计成一系列<strong>松耦合</strong>的细粒度服务，并通过轻量级的通信协议<strong>组织</strong>起来。<br>
+具体地，将应用构建成一组小型服务。这些服务都能够独立部署、独立扩展，每个服务都具有稳固的模块边界，甚至允许使用不同的编程语言来编写不同服务，也可以由不同的团队来管理</p>
+</blockquote>
+<h3 class="mume-header" id="%E5%BE%AE%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84">微前端架构</h3>
+
+<p>微前端由微服务架构演变而来</p>
+<blockquote>
+<p>一种由独立交付的<strong>多个前端应用</strong>组成<strong>整体</strong>的架构风格。<br>
+具体的，将前端应用分解成一些更小、更简单的能够独立开发、测试、部署的小块，而在用户看来仍然是内聚的单个产品。</p>
+</blockquote>
+<hr>
+<h2 class="mume-header" id="%E5%BE%AE%E5%89%8D%E7%AB%AF%E8%A6%81%E8%A7%A3%E5%86%B3%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98">微前端要解决什么问题</h2>
+
+<p>任何新技术的产生都是为了解决现有场景和需求下的技术痛点</p>
+<ol>
+<li>
+<p><strong>拆分和细化</strong>: 当下前端领域，单页面应用（SPA）是非常流行的项目形态之一，而随着时间的推移以及应用功能的丰富，单页应用变得不再单一而是越来越庞大也越来越难以维护，往往是改一处而动全身，由此带来的发版成本也越来越高。微前端的意义就是将这些庞大应用进行拆分，并随之解耦，每个部分可以单独进行维护和部署，提升效率。</p>
+</li>
+<li>
+<p><strong>整合历史系统</strong>: 在不少的业务中，或多或少会存在一些历史项目，这些项目大多以采用老框架的B端管理系统为主，介于日常运营，这些系统需要结合到新框架中来使用还不能抛弃，对此我们也没有理由浪费时间和精力重写旧的逻辑。而微前端可以将这些系统进行整合，在基本不修改原来逻辑的同时来同时兼容新老两套系统并行运行。</p>
+</li>
+</ol>
+<blockquote>
+<p>微前端架构旨在解决单体应用在一个相对长的时间跨度下，由于参与的人员、团队的增多、变迁，从一个普通应用演变成一个<strong>巨石应用</strong>后，随之而来的应用不可<strong>维护</strong>的问题。这类问题在企业级 Web 应用中尤其常见。</p>
+</blockquote>
+<h3 class="mume-header" id="%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E5%BE%AE%E5%89%8D%E7%AB%AF">为什么需要微前端</h3>
+
+<p>前端越来越重:</p>
+<ul>
+<li>代码库庞大</li>
+<li>开发人员多</li>
+<li>打包后的代码也很庞大</li>
+</ul>
+<p>前端越来越复杂:</p>
+<ul>
+<li>层出不穷的框架、类库</li>
+<li>各种各样的工程化体系</li>
+</ul>
+<p><strong>需要一种分解复杂度、提升协作效率、支持灵活扩展的架构模式</strong></p>
+<hr>
+<h2 class="mume-header" id="%E5%BE%AE%E5%89%8D%E7%AB%AF%E7%9A%84%E4%BC%98%E7%82%B9">微前端的优点</h2>
+
+<ul>
+<li>
+<p>技术栈无关<br>
+主框架不限制接入应用的技术栈，微应用具备完全自主权</p>
+</li>
+<li>
+<p>独立开发、独立部署<br>
+微应用仓库独立，前后端可独立开发，部署完成后主框架自动完成同步更新</p>
+</li>
+<li>
+<p>增量升级<br>
+在面对各种复杂场景时，我们通常很难对一个已经存在的系统做全量的技术栈升级或重构，而微前端是一种非常好的实施渐进式重构的手段和策略</p>
+</li>
+<li>
+<p>独立运行时<br>
+每个微应用之间状态隔离，运行时状态不共享</p>
+</li>
+</ul>
+<p>总结: 简而言之，微前端就是将大而恐怖的东西切成更小、更易于管理的部分，然后明确地表明它们之间的依赖性。我们的技术选择，我们的代码库，我们的团队以及我们的发布流程都应该能够彼此独立地操作和发展，无需过多的协调。</p>
+<hr>
+<h2 class="mume-header" id="%E5%BE%AE%E5%89%8D%E7%AB%AF%E7%9A%84%E7%BC%BA%E7%82%B9">微前端的缺点</h2>
+
+<ul>
+<li>下载量大: 独立构建可能会导致重复得依赖，从而增加用户的下载量。</li>
+<li>环境差异: 当微应用越来越多，你在本地开发时肯定无法把所有微应用和对应的后端都启动起来。</li>
+<li>治理复杂性: 微前端作为一个更加分布式的体系结构，将不可避免地要管理更多的东西：更多的代码库、更多的工具、更多的构建管道、更多的服务器、更多的域名等。</li>
+</ul>
+<ol>
+<li>体验有所折损</li>
+<li>维护成本高</li>
+<li>管理版本复杂、依赖复杂</li>
+<li>开发体验不太友好</li>
+<li>粒度不宜太小</li>
+</ol>
+<hr>
+<h2 class="mume-header" id="%E7%9B%AE%E5%89%8D%E5%BE%AE%E5%89%8D%E7%AB%AF%E6%9C%89%E5%93%AA%E4%BA%9B%E6%A1%86%E6%9E%B6">目前微前端有哪些框架</h2>
+
+<ol>
+<li>Bit</li>
+<li>Webpack 5 和 Module Federation</li>
+<li>Single SPA</li>
+<li>SystemJS</li>
+<li>Piral</li>
+<li>OpenComponent</li>
+<li><strong>Qiankun</strong></li>
+<li>Luigi</li>
+<li>FrintJS</li>
+<li>Mosaic</li>
+<li>PuzzleJS</li>
+</ol>
+<p>可以去这篇文章了解他们的特性<a href="https://mp.weixin.qq.com/s/gtyD1v6UiIWyDV949KePVQ">你必须知道的11个微前端框架</a></p>
+<hr>
+<h2 class="mume-header" id="%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%94%A8-iframe">为什么不用 iframe</h2>
+
+<ol>
+<li>url不同步。浏览器刷新 iframe url 状态丢失、后退前进按钮无法使用</li>
+<li>UI不同步，DOM结构不共享。iframe区域内弹窗遮罩不能覆盖外面iframe以外的区域</li>
+<li>全局上下文完全隔离，内存变量不共享。cookie传递问题</li>
+<li>慢。每次进入新的iframe都是浏览器的上下文重建、资源重新加载的过程</li>
+</ol>
+<p>其实主要问题是使用iframe会带来非常严重的体验问题。</p>
+<hr>
+<h2 class="mume-header" id="%E4%BD%BF%E7%94%A8qiankun">使用Qiankun</h2>
+
+<ul>
+<li>主要使用的思路:</li>
+</ul>
+<p>在主应用中<strong>注册子应用</strong>，子应用需要<strong>暴露Qiankun定义的生命周期</strong>方法。</p>
+<p>在加载页面时，Qiankun会去加载资源，根据约定拿到方法（子应用通过webpack以<strong>umd</strong>的形式来输出，并且要支持<strong>跨域</strong>）。</p>
+<p>在执行时会将window对象绑定到一个Proxy对象上，以防污染全局变量</p>
+<blockquote>
+<p>UMD（Universal Module Definition）是AMD和CommonJS的糅合，跨平台的解决方案。UMD先判断是否支持Node.js的模块（exports）是否存在，存在则使用Node.js模块模式。再判断是否支持AMD（define是否存在），存在则使用AMD方式加载模块。</p>
+</blockquote>
+<h3 class="mume-header" id="%E5%85%B3%E9%94%AE%E4%BB%A3%E7%A0%81">关键代码</h3>
+
+<h4 class="mume-header" id="%E4%B8%BB%E5%BA%94%E7%94%A8">主应用:</h4>
+
+<ol>
+<li>安装 Qiankun</li>
+</ol>
+<pre data-role="codeBlock" data-info="" class="language-"><code>yarn add qiankun
+or
+npm install qiankun -S
+</code></pre><ol start="2">
+<li>引入使用</li>
+</ol>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> registerMicroApps<span class="token punctuation">,</span> start <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'qiankun'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> apps <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        name<span class="token punctuation">:</span> <span class="token string">'app1'</span><span class="token punctuation">,</span> <span class="token comment">// 应用名称</span>
+        entry<span class="token punctuation">:</span> <span class="token string">'//localhost:9001'</span><span class="token punctuation">,</span> <span class="token comment">// 加载的html路径</span>
+        container<span class="token punctuation">:</span> <span class="token string">'#micro-app'</span><span class="token punctuation">,</span> <span class="token comment">// 容器名</span>
+        activeRule<span class="token punctuation">:</span> <span class="token string">'/app1'</span><span class="token punctuation">,</span> <span class="token comment">// 激活的路径</span>
+         <span class="token comment">// 传参</span>
+        props<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token function">registerMicroApps</span><span class="token punctuation">(</span>apps<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token function">beforeLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">beforeMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">afterMount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 注册应用</span>
+<span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><ol start="3">
+<li>添加承载子应用的dom</li>
+</ol>
+<pre data-role="codeBlock" data-info="" class="language-"><code>&lt;div id="#micro-app"&gt;&lt;/div&gt;
+</code></pre><h4 class="mume-header" id="%E5%AD%90%E5%BA%94%E7%94%A8">子应用:</h4>
+
+<p>入口输出生命周期钩子</p>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>window<span class="token punctuation">.</span>__POWERED_BY_QIANKUN__<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 不在微前端架构中，独立启动</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 生命周期</span>
+<span class="token keyword">export</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">bootstrap</span> <span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 启动</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'bootstrap props'</span><span class="token punctuation">,</span> props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">mount</span> <span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 挂载</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'mount props'</span><span class="token punctuation">,</span> props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">render</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">unmount</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 销毁</span>
+<span class="token punctuation">}</span>
+</pre><ul>
+<li>其他配置:</li>
+</ul>
+<ol>
+<li>子应用开启跨域</li>
+<li>webpack 输出 umd 形式</li>
+</ol>
+<pre data-role="codeBlock" data-info="js" class="language-javascript">    devServer<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        port<span class="token punctuation">:</span> <span class="token number">9001</span><span class="token punctuation">,</span>
+        <span class="token comment">// 必须开启允许跨域</span>
+        headers<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            <span class="token string">'Access-Control-Allow-Origin'</span><span class="token punctuation">:</span><span class="token string">'*'</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    configureWebpack<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        output<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            library<span class="token punctuation">:</span> <span class="token string">'app1'</span><span class="token punctuation">,</span>
+            libraryTarget<span class="token punctuation">:</span> <span class="token string">'umd'</span> <span class="token comment">// 必须打包成umd格式</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</pre><hr>
+<h2 class="mume-header" id="%E5%86%99%E7%82%B9demo%E5%B0%9D%E9%B2%9C">写点demo尝鲜</h2>
+
+<h3 class="mume-header" id="1%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E4%B8%BB%E5%BA%94%E7%94%A8%E5%AD%90%E5%BA%94%E7%94%A8demo01">1.最简单的主应用+子应用(demo01)</h3>
+
+<h3 class="mume-header" id="2%E6%8E%A5%E5%85%A5%E4%B8%80%E4%B8%AA%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF%E6%A0%88%E7%9A%84%E5%AD%90%E5%BA%94%E7%94%A8demo02">2.接入一个其他技术栈的子应用(demo02)</h3>
+
+<ul>
+<li>react子应用配置注意:</li>
+</ul>
+<p>先eject再配置:</p>
+<p>创建.env文件配置端口</p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>PORT=9002
+WDS_SOCKET_PORT=9002
+</code></pre><ul>
+<li>vue3子应用注意:</li>
+</ul>
+<p>只支持webpack构建vue3接入，暂时不支持vite构建接入</p>
+<h3 class="mume-header" id="3%E8%B7%B3%E8%BD%AC%E5%BA%94%E7%94%A8demo02">3.跳转应用(demo02)</h3>
+
+<ol>
+<li>使用 &lt;a&gt; 标签：页面会刷新</li>
+<li>使用框架路由：页面不会刷新</li>
+</ol>
+<p>进入后跳转默认应用，可使用qiankun提供的API</p>
+<p>setDefaultMountApp('/homeApp');</p>
+<p>也可使用框架路由来跳转</p>
+<h3 class="mume-header" id="4%E6%A0%B7%E5%BC%8F%E9%9A%94%E7%A6%BBdemo03">4.样式隔离(demo03)</h3>
+
+<ol>
+<li>shadowDOM 严格隔离</li>
+</ol>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    sandbox<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        strictStyleIsolation<span class="token punctuation">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>*需要注意挂载的DOM要从props.container中去拿</p>
+<ol start="2">
+<li>对子应用增加样式前缀</li>
+</ol>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    sandbox<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        experimentalStyleIsolation<span class="token punctuation">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><h3 class="mume-header" id="5js%E7%9A%84%E9%9A%94%E7%A6%BBdemo04">5.js的隔离(demo04)</h3>
+
+<p>window 对象互不影响</p>
+<h3 class="mume-header" id="6%E5%BA%94%E7%94%A8%E9%97%B4%E9%80%9A%E4%BF%A1demo05">6.应用间通信(demo05)</h3>
+
+<ul>
+<li>initGlobalState(state)</li>
+</ul>
+<p>主应用</p>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> initGlobalState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'qiankun'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> initialState <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 初始化state</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> actions <span class="token operator">=</span> <span class="token function">initGlobalState</span><span class="token punctuation">(</span>initialState<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> actions<span class="token punctuation">;</span>
+
+</pre><p>子应用</p>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token comment">// 接收</span>
+<span class="token keyword">export</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">mount</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'mount props'</span><span class="token punctuation">,</span> props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> onGlobalStateChange<span class="token punctuation">,</span> setGlobalState <span class="token punctuation">}</span> <span class="token operator">=</span> props<span class="token punctuation">;</span>
+    <span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>$global <span class="token operator">=</span> <span class="token punctuation">{</span>
+        onGlobalStateChange<span class="token punctuation">,</span>
+        setGlobalState<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token function">render</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 使用</span>
+<span class="token comment">// 1.监听</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>$global<span class="token punctuation">.</span><span class="token function">onGlobalStateChange</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> prev</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> immediately<span class="token operator">?</span> <span class="token punctuation">:</span>boolean<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 2.修改</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>$global<span class="token punctuation">.</span><span class="token function">setGlobalState</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>注意： 子应用只能改变 initGlobalState 中声明的变量，主应用可以改变 initGlobalState 中未声明的变量</p>
+<h3 class="mume-header" id="7%E5%BC%95%E5%85%A5ui%E5%BA%93demo06">7.引入UI库(demo06)</h3>
+
+<ul>
+<li>element-ui</li>
+</ul>
+<ol>
+<li>安装</li>
+</ol>
+<pre data-role="codeBlock" data-info="" class="language-"><code>yarn add element-ui
+or
+npm install element-ui -S
+</code></pre><ol start="2">
+<li>引入</li>
+</ol>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">import</span> ElementUI <span class="token keyword">from</span> <span class="token string">'element-ui'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'element-ui/lib/theme-chalk/index.css'</span><span class="token punctuation">;</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>ElementUI<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><ul>
+<li>ant-design-vue</li>
+</ul>
+<ol>
+<li>安装</li>
+</ol>
+<pre data-role="codeBlock" data-info="" class="language-"><code>yarn add ant-design-vue
+or
+npmr install ant-design-vue -S
+</code></pre><ol start="2">
+<li>引入</li>
+</ol>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">import</span> Antd <span class="token keyword">from</span> <span class="token string">'ant-design-vue'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'ant-design-vue/dist/antd.css'</span><span class="token punctuation">;</span>
+
+vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Antd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><h4 class="mume-header" id="%E5%9D%911-%E5%AD%97%E4%BD%93%E6%96%87%E4%BB%B6%E5%A4%A7%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD">坑1: 字体文件，大图片无法加载</h4>
+
+<p>原因是 qiankun 将外链样式改成了内联样式，但是字体文件和背景图片的加载路径是相对路径。</p>
+<p>配置vue.config.js</p>
+<pre data-role="codeBlock" data-info="js" class="language-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">chainWebpack</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token parameter">config</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        config<span class="token punctuation">.</span>module
+            <span class="token punctuation">.</span><span class="token function">rule</span><span class="token punctuation">(</span><span class="token string">'fonts'</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token string">'url-loader'</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">loader</span><span class="token punctuation">(</span><span class="token string">'url-loader'</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">options</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        config<span class="token punctuation">.</span>module
+            <span class="token punctuation">.</span><span class="token function">rule</span><span class="token punctuation">(</span><span class="token string">'images'</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token string">'url-loader'</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">loader</span><span class="token punctuation">(</span><span class="token string">'url-loader'</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">options</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</pre><hr>
+<h2 class="mume-header" id="%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90">源码分析</h2>
+
+<h3 class="mume-header" id="js%E6%B2%99%E7%AE%B1%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0demo07">js沙箱如何实现(demo07)</h3>
+
+<p>porxy 代理 window</p>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token comment">// 存放新增的初始值</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> addedPropsMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 存放改变前的初始值</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> modifyPropsMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 存放改变后当前的值</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> currentUpdatedPropsMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> rawWindow <span class="token operator">=</span> window<span class="token punctuation">;</span>
+<span class="token keyword">const</span> fakeWindow <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> proxy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>fakeWindow<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token keyword">set</span><span class="token punctuation">(</span>_<span class="token punctuation">,</span> p<span class="token punctuation">,</span> value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'set'</span><span class="token punctuation">,</span> p<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>rawWindow<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 如果window对象中没有该属性，则存放到新增Map</span>
+            addedPropsMap<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>modifyPropsMap<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 如果window对象中有该属性，但是“改变前初始值”Map中没有，记录初始值</span>
+            <span class="token keyword">const</span> originalValue <span class="token operator">=</span> rawWindow<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            modifyPropsMap<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> originalValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// 存放当前改变的值</span>
+        currentUpdatedPropsMap<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        rawWindow<span class="token punctuation">[</span>p<span class="token punctuation">]</span> <span class="token operator">=</span> value<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token keyword">get</span><span class="token punctuation">(</span>_<span class="token punctuation">,</span> p<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'get'</span><span class="token punctuation">,</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">const</span> value <span class="token operator">=</span> rawWindow<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> value<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">has</span><span class="token punctuation">(</span><span class="token parameter">_<span class="token punctuation">,</span> p</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> p <span class="token keyword">in</span> rawWindow<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> proxy<span class="token punctuation">;</span>
+
+</pre><p>装入沙箱</p>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">import</span> proxy<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    addedPropsMap<span class="token punctuation">,</span>
+    modifyPropsMap<span class="token punctuation">,</span>
+    currentUpdatedPropsMap<span class="token punctuation">,</span>
+<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./proxyWindow'</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">window</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    window<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token number">12</span><span class="token punctuation">;</span>
+    window<span class="token punctuation">.</span>fetch <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'add'</span><span class="token punctuation">,</span> addedPropsMap<span class="token punctuation">,</span> <span class="token string">'modify'</span><span class="token punctuation">,</span>modifyPropsMap<span class="token punctuation">,</span> <span class="token string">'current'</span><span class="token punctuation">,</span> currentUpdatedPropsMap<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span>proxy<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><h2 class="mume-header" id="%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE">参考文献</h2>
+
+<p><a href="https://zhuanlan.zhihu.com/p/96464401">微前端到底是什么</a></p>
+<p><a href="https://mp.weixin.qq.com/s/gtyD1v6UiIWyDV949KePVQ">你必须知道的11个微前端框架</a></p>
+<p><a href="https://mp.weixin.qq.com/s/IuazLgiywTcOZ4UezFUCjg">如何设计实现微前端框架-qiankun</a></p>
+<p><a href="https://juejin.im/post/6844904162509979662">微前端-最容易看懂的微前端知识</a></p>
+<p><a href="https://juejin.im/post/6844903953734336525">微前端入门</a></p>
+<p><a href="https://juejin.im/post/6844903663404580878">AMD, CMD, CommonJS, ES Module, UMD</a></p>
+<p><a href="https://juejin.im/post/6847902222525661197#heading-5">微前端完整解读 —— 场景分析及 Qiankun 原理介绍</a></p>
+<p><a href="https://www.yuque.com/kuitos/gky7yw/gesexv">为什么不用Iframe</a></p>
+<p><a href="https://qiankun.umijs.org/zh/guide">QiankunAPI</a></p>
+<p><a href="https://github.com/a1029563229/blogs/blob/master/Source-Code/qiankun/1.md">Qiankun源码解析</a></p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  </body></html>
