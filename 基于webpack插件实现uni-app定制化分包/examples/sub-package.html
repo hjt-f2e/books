@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>基于webpack插件实现uni-app定制化分包</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="../dist/reveal.css">
+    <link rel="stylesheet" href="../dist/theme/black.css" id="theme">
+    <link rel="stylesheet" href="../plugin/highlight/monokai.css">
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <div class="slides">
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+            <h3>基于webpack插件实现uni-app定制化分包</h3>
+        </section>
+        <section>
+            <h2>目录</h2>
+            <ul>
+                <li>插件实现过程</li>
+                <li>webpack 插件运作机制分析</li>
+            </ul>
+        </section>
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+          <h2>插件实现过程</h2>
+        </section>
+        <section data-auto-animate>
+            <h3>问题描述</h3>
+            <p data-id="text-props" style="background: #555; line-height: 1em; letter-spacing: 0em;">总包体积最小</p>
+            <h4>VS</h4>
+            <p data-id="text-props" style="background: rgb(5, 108, 226); line-height: 1em; letter-spacing: 0em;">主包体积最小</p>
+        </section>
+        <section>
+          <section data-auto-animate>
+            <h3>实现过程</h3>
+            <ul>
+              <li>文件移动</li>
+              <li>修改json文件中的组件引用路径</li>
+            </ul>
+        </section>
+        </section>
+        <section data-auto-animate style="height: 600px">
+            <h3 style="opacity: 0.3; font-size: 18px;">效果展示</h2>
+                <h2 data-id="title" style="margin-top: 100px;">使用插件前</h2>
+                <div data-id="1" style="background: cyan; position: absolute; bottom: 190px; left: 16%; width: 60px; height: 200px;font-size: 16px;color: #000;">主包1234kb</div>
+                <div data-id="2" style="background: magenta; position: absolute; bottom: 190px; left: 36%; width: 60px; height: 120px;font-size: 14px;color: #000;">分包1</div>
+                <div data-id="3" style="background: yellow; position: absolute; bottom: 190px; left: 56%; width: 60px; height: 100px;font-size: 14px;color: #000;">分包2</div>
+                <div data-id="4" style="background: red; position: absolute; bottom: 190px; left: 76%; width: 60px; height: 80px;font-size: 14px;color: #000;">分包3</div>
+        </section>
+        <section data-auto-animate style="height: 600px">
+            <h3 style="opacity: 0.3; font-size: 18px;">效果展示</h2>
+                <h2 data-id="title" style="margin-top: 500px">使用插件后</h2>
+                <div data-id="1" style="background: cyan; position: absolute; bottom: 190px; left: 16%; width: 60px; height: 80px;font-size: 16px;color: #000;">主包500kb</div>
+                <div data-id="2" style="background: magenta; position: absolute; bottom: 190px; left: 36%; width: 60px; height: 160px;font-size: 14px;color: #000;">分包1</div>
+                <div data-id="3" style="background: yellow; position: absolute; bottom: 190px; left: 56%; width: 60px; height: 180px;font-size: 14px;color: #000;">分包2</div>
+                <div data-id="4" style="background: red; position: absolute; bottom: 190px; left: 76%; width: 60px; height: 200px;font-size: 14px;color: #000;">分包3</div>
+        </section>
+
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+          <h2>webpack 插件运作机制分析</h2>
+        </section>
+        <section data-auto-animate>
+          <h3>webpack依靠什么来管理插件？</h3>
+          <ul>
+            <li>tapable: 贯穿整个webpack工作周期,实现插件绑定与调用</li>
+            <li>tapable的本质是一个eventEmitter</li>
+          </ul>
+        </section>  
+        <section data-auto-animate>
+          <h3>tapable钩子类型</h3>
+          <ul>
+            <li>普通型: 按照注册顺序执行，彼此之间没有强关联</li>
+            <li>流水型: 上一个tap如果有返回值，会作为下一个tap的参数</li>
+            <li>熔断型: 如果有返回值，下面的tap就不会执行</li>
+          </ul>
+        </section>  
+        <section data-auto-animate>
+          <h3>webpack loader和plugin有什么区别？</h3>
+          <ul>
+            <li>loader是一个转换器，将A文件进行编译成B文件，比如：将A.less转换为A.css，单纯的文件转换过程。</li>
+            <li>plugin是一个扩展器，它丰富了webpack本身，针对是loader结束后，webpack打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听webpack打包过程中的某些节点，执行广泛的任务</li>
+          </ul>
+        </section>
+        <section data-auto-animate data-auto-animate-unmatched="fade">
+          <h2>谢谢大家！</h2>
+        </section>
+    </div>
+
+</div>
+
+<script src="../dist/reveal.js"></script>
+<script src="../plugin/highlight/highlight.js"></script>
+<script>
+    Reveal.initialize({
+        center: true,
+        hash: true,
+        plugins: [ RevealHighlight ]
+    });
+</script>
+
+</body>
+</html>
